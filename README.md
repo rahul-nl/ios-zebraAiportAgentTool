@@ -16,6 +16,7 @@ This starter gives you production-style core code for:
 - `PrintCoordinator` orchestration.
 - `ZebraPrinterClient` protocol + starter implementation hook.
 - Local notification service.
+- Global custom font theme helper (`AppCore/UI/AppTheme.swift`).
 
 ## Folder structure
 
@@ -68,3 +69,4 @@ This starter gives you production-style core code for:
 
 - iOS background execution is best-effort. For high reliability, trigger print while app is foreground when possible.
 - For background-triggered workflow, use APNs silent push and a queued job model on backend.
+- For custom font setup, follow `Config/Fonts.md`.

@@ -1,4 +1,7 @@
 import Foundation
+#if canImport(ZSDK_API)
+import ZSDK_API
+#endif
 
 protocol PrinterClient {
     func printZpl(_ zpl: String, printerSerial: String) async throws
@@ -14,10 +17,27 @@ final class ZebraPrinterClient: PrinterClient {
             throw AppError.printing("Printer serial is required")
         }
 
-        // Integrate actual Zebra SDK invocation in this method from your iOS target.
-        // This starter keeps the API boundary clean while you wire native SDK import settings in Xcode.
-        // Example SDK class to use: MfiBtPrinterConnection
+        guard let data = zpl.data(using: .utf8) else {
+            throw AppError.printing("Unable to encode ZPL as UTF-8")
+        }
 
-        throw AppError.printing("Zebra SDK call not wired yet. Open ZebraPrinterClient and implement MfiBtPrinterConnection write flow.")
+        #if canImport(ZSDK_API)
+        let connection = MfiBtPrinterConnection(serialNumber: printerSerial)
+
+        guard connection.open() else {
+            throw AppError.printing("Unable to open Zebra Bluetooth connection for serial: \(printerSerial)")
+        }
+
+        defer { connection.close() }
+
+        var writeError: NSError?
+        _ = connection.write(data, error: &writeError)
+
+        if let writeError {
+            throw AppError.printing("Zebra print write failed: \(writeError.localizedDescription)")
+        }
+        #else
+        throw AppError.printing("Zebra SDK is not linked. Add ZSDK_API.xcframework to your Xcode target.")
+        #endif
     }
 }
