@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Xcode
+DerivedData/
+build/
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcuserstate
+
+# Swift Package Manager
+.build/
+
+# Secrets / local config overrides
+Config/runtime-config.json
+.env
+
+# Logs
+*.log

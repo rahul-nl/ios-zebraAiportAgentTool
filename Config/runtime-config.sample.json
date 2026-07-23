@@ -1,0 +1,22 @@
+{
+  "authBaseUrl": "https://your-auth-api.company.com",
+  "authTokenPath": "/oauth/token",
+  "authMethod": "POST",
+  "authHeaders": {
+    "Content-Type": "application/json"
+  },
+  "authBodyTemplate": {
+    "client_id": "YOUR_CLIENT_ID",
+    "client_secret": "YOUR_CLIENT_SECRET",
+    "grant_type": "client_credentials"
+  },
+  "zplBaseUrl": "https://your-zpl-api.company.com",
+  "zplPath": "/api/v1/labels/by-pnr",
+  "zplMethod": "POST",
+  "zplHeaders": {
+    "Content-Type": "application/json"
+  },
+  "defaultStationCode": "AUH",
+  "defaultDeviceId": "ios-device-001",
+  "requestTimeoutSeconds": 20
+}
