@@ -1,0 +1,7 @@
+include:
+  - project.yml
+
+targets:
+  ZebraAirportAgentTool:
+    dependencies:
+      - framework: Vendor/ZSDK_API.xcframework

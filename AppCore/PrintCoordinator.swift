@@ -20,12 +20,14 @@ final class PrintCoordinator {
 
     func processPNR(pnr: String, printerSerial: String, stationCode: String? = nil, deviceId: String? = nil) async -> PrintResult {
         do {
-            let token = try await authService.fetchAccessToken()
+            let requiresBearerAuth = zplService.requiresBearerAuth
+            let token = requiresBearerAuth ? try await authService.fetchAccessToken() : nil
+            _ = stationCode
+            _ = deviceId
+
             let zplResponse = try await zplService.fetchZpl(
                 accessToken: token,
-                pnr: pnr,
-                stationCode: stationCode,
-                deviceId: deviceId
+                pnr: pnr
             )
 
             try await printerClient.printZpl(zplResponse.zpl, printerSerial: printerSerial)

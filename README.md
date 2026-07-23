@@ -34,6 +34,44 @@ This starter gives you production-style core code for:
    - `../zebra-linkos-mpsdk-ios-v1.6.1158/Link-OS_SDK/iOS/v1.6.1158/lib/xcframework/ZSDK_API.xcframework`
 6. Implement scanner/manual PNR input and call `PrintCoordinator.processPNR(...)`.
 
+## Wired app shell in this repo
+
+This repository now includes a minimal SwiftUI app shell and Xcode project wiring:
+
+- `App/`: app entrypoint, minimal screen, and view model
+- `project.yml`: base XcodeGen config (no hard Zebra SDK dependency)
+- `project.with-zebra.yml`: overlay config that adds `Vendor/ZSDK_API.xcframework`
+- `scripts/link_zebra_sdk.sh`: creates `Vendor/ZSDK_API.xcframework` symlink
+- `scripts/bootstrap_xcode_project.sh`: generates `ZebraAirportAgentTool.xcodeproj`
+
+### Bootstrap steps
+
+1. Link Zebra SDK into `Vendor/`:
+
+```bash
+./scripts/link_zebra_sdk.sh /absolute/path/to/ZSDK_API.xcframework
+```
+
+This script also regenerates the project with Zebra SDK linkage enabled.
+
+2. Generate Xcode project:
+
+```bash
+./scripts/bootstrap_xcode_project.sh
+```
+
+If Zebra SDK is not linked yet, this generates a project without SDK dependency so the app still opens/builds. `PrinterClient` will then fail gracefully at runtime with a clear message until SDK is linked.
+
+3. Open generated project:
+
+```bash
+open ZebraAirportAgentTool.xcodeproj
+```
+
+4. Update bundle identifier/team in Xcode Signing.
+5. Edit `Config/runtime-config.json` with real API endpoints/credentials.
+6. Add `EtihadAltis-Text.ttf` into `Resources/Fonts/` and confirm `UIAppFonts` entry in `App/Info.plist`.
+
 ## API contract expected
 
 ### Token API response

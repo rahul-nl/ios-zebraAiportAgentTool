@@ -1,0 +1,492 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E33569FDBE67ADC276E4C1C /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A27E9E9B53BBC79822000B /* HTTPClient.swift */; };
+		2F1DB5B7B24E5B96D11F0F56 /* ZSDK_API.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A0BD3142D373C381E11FC004 /* ZSDK_API.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2F73BC2F8AC1607A2C8574AC /* BoardingPassScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC050634C541D962FC54086E /* BoardingPassScannerView.swift */; };
+		3C12C4BB11D291063F084DC5 /* ZebraAirportAgentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846174E39B7742C15F4A343A /* ZebraAirportAgentApp.swift */; };
+		47E0D80E588695CD4D4B8319 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A071A577DE46FD6598BE1B08 /* NotificationService.swift */; };
+		5279615DC8162AF61EC926DA /* RuntimeConfigStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817E127C321083F383EC4511 /* RuntimeConfigStore.swift */; };
+		836080D2E60826294408C171 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6124468B3124C34EBF9F1E5E /* AuthService.swift */; };
+		84977F92A9D5397AF9670513 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF280AFDC1C4412E16C799 /* AppTheme.swift */; };
+		89B19BCDAFE1BF1276C2892D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 87335AA79AEFC8D6CB5FFA1D /* README.md */; };
+		8D8A4F371376D5A9F7B53E2D /* PrintScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448446AF7A490BF6FD5D246 /* PrintScreen.swift */; };
+		A6947FCD64B9F24B458DB897 /* ZebraSdkImplementationGuide.md in Resources */ = {isa = PBXBuildFile; fileRef = 0338C70E7D5244808C138459 /* ZebraSdkImplementationGuide.md */; };
+		A97C17469DFC69601538E581 /* PrintCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF888157C611A7629376D8E0 /* PrintCoordinator.swift */; };
+		AA8E38039004662F26CF63A0 /* runtime-config.json in Resources */ = {isa = PBXBuildFile; fileRef = A8C3CD6D55B28FA08501581E /* runtime-config.json */; };
+		B58B4AA1B58FE2DDFC398319 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBBA56D60423A158DAD9E4D /* Models.swift */; };
+		C1F9141FBCC44E523CCDF59F /* ZebraPrinterBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E13B46BE4FCD519D67E0633 /* ZebraPrinterBridge.m */; };
+		DACB924A7AA45A1813D54AE4 /* ZplService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA76581A002950794AC08E5 /* ZplService.swift */; };
+		DFC6C46B478E3B9208271112 /* PrintViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782E39E75ABB767A6DE42F0E /* PrintViewModel.swift */; };
+		E75F5387D665CF2AE4B8C6B7 /* ExampleUsage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 328CA3A419D7A770CE29018D /* ExampleUsage.swift */; };
+		F5878D7EA65D1E4B3B05DC49 /* ZSDK_API.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0BD3142D373C381E11FC004 /* ZSDK_API.xcframework */; };
+		F7BEA40ABBADF2CF49866AA6 /* PrinterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012866129A7AD8E21054E09F /* PrinterClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		32E02254D82EDF5541D752F7 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2F1DB5B7B24E5B96D11F0F56 /* ZSDK_API.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		012866129A7AD8E21054E09F /* PrinterClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrinterClient.swift; sourceTree = "<group>"; };
+		01A27E9E9B53BBC79822000B /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		0338C70E7D5244808C138459 /* ZebraSdkImplementationGuide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ZebraSdkImplementationGuide.md; sourceTree = "<group>"; };
+		0AA76581A002950794AC08E5 /* ZplService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZplService.swift; sourceTree = "<group>"; };
+		13ECA179266E1F8327303BA3 /* ZebraPrinterBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZebraPrinterBridge.h; sourceTree = "<group>"; };
+		328CA3A419D7A770CE29018D /* ExampleUsage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUsage.swift; sourceTree = "<group>"; };
+		4E13B46BE4FCD519D67E0633 /* ZebraPrinterBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZebraPrinterBridge.m; sourceTree = "<group>"; };
+		4FBBA56D60423A158DAD9E4D /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		6124468B3124C34EBF9F1E5E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		782E39E75ABB767A6DE42F0E /* PrintViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintViewModel.swift; sourceTree = "<group>"; };
+		78FF280AFDC1C4412E16C799 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		817E127C321083F383EC4511 /* RuntimeConfigStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeConfigStore.swift; sourceTree = "<group>"; };
+		846174E39B7742C15F4A343A /* ZebraAirportAgentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZebraAirportAgentApp.swift; sourceTree = "<group>"; };
+		87335AA79AEFC8D6CB5FFA1D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8C3FFD31D23AB15B26577707 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9D9C69CDEC101B3AC2AE26E1 /* ZebraAirportAgentTool-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZebraAirportAgentTool-Bridging-Header.h"; sourceTree = "<group>"; };
+		A071A577DE46FD6598BE1B08 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		A0BD3142D373C381E11FC004 /* ZSDK_API.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = ZSDK_API.xcframework; path = Vendor/ZSDK_API.xcframework; sourceTree = "<group>"; };
+		A813652E95B75D04F2F2BD74 /* ZebraAirportAgentTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZebraAirportAgentTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8C3CD6D55B28FA08501581E /* runtime-config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "runtime-config.json"; sourceTree = "<group>"; };
+		CC050634C541D962FC54086E /* BoardingPassScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardingPassScannerView.swift; sourceTree = "<group>"; };
+		CF888157C611A7629376D8E0 /* PrintCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintCoordinator.swift; sourceTree = "<group>"; };
+		F448446AF7A490BF6FD5D246 /* PrintScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintScreen.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8D46C97344681AED7047EE36 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5878D7EA65D1E4B3B05DC49 /* ZSDK_API.xcframework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01C7E95376EC103A6081AB75 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				78FF280AFDC1C4412E16C799 /* AppTheme.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		05575C128418C88ECF4774A3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0BD3142D373C381E11FC004 /* ZSDK_API.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1729D4D65E5BF59553E74FB4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6124468B3124C34EBF9F1E5E /* AuthService.swift */,
+				01A27E9E9B53BBC79822000B /* HTTPClient.swift */,
+				817E127C321083F383EC4511 /* RuntimeConfigStore.swift */,
+				0AA76581A002950794AC08E5 /* ZplService.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2B85D1033CDC53E7CECA16CA /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				A8C3CD6D55B28FA08501581E /* runtime-config.json */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		73DAE02B32128DC5BADF2698 /* AppCore */ = {
+			isa = PBXGroup;
+			children = (
+				328CA3A419D7A770CE29018D /* ExampleUsage.swift */,
+				4FBBA56D60423A158DAD9E4D /* Models.swift */,
+				CF888157C611A7629376D8E0 /* PrintCoordinator.swift */,
+				1729D4D65E5BF59553E74FB4 /* API */,
+				B246BDAB10F6C7FE078ABBB7 /* Notifications */,
+				01C7E95376EC103A6081AB75 /* UI */,
+				C2C83CFB046CCAA21A69BF0E /* Zebra */,
+			);
+			path = AppCore;
+			sourceTree = "<group>";
+		};
+		92A82C77BF6B670C698117BF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A813652E95B75D04F2F2BD74 /* ZebraAirportAgentTool.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		940842B7860C531C88271D0F = {
+			isa = PBXGroup;
+			children = (
+				94A50DC3CE520ECA290234FC /* App */,
+				73DAE02B32128DC5BADF2698 /* AppCore */,
+				2B85D1033CDC53E7CECA16CA /* Config */,
+				AD49E211EA97C7CAE3A60689 /* Fonts */,
+				05575C128418C88ECF4774A3 /* Frameworks */,
+				92A82C77BF6B670C698117BF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		94A50DC3CE520ECA290234FC /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CC050634C541D962FC54086E /* BoardingPassScannerView.swift */,
+				8C3FFD31D23AB15B26577707 /* Info.plist */,
+				F448446AF7A490BF6FD5D246 /* PrintScreen.swift */,
+				782E39E75ABB767A6DE42F0E /* PrintViewModel.swift */,
+				846174E39B7742C15F4A343A /* ZebraAirportAgentApp.swift */,
+				9D9C69CDEC101B3AC2AE26E1 /* ZebraAirportAgentTool-Bridging-Header.h */,
+				13ECA179266E1F8327303BA3 /* ZebraPrinterBridge.h */,
+				4E13B46BE4FCD519D67E0633 /* ZebraPrinterBridge.m */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		AD49E211EA97C7CAE3A60689 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				87335AA79AEFC8D6CB5FFA1D /* README.md */,
+			);
+			name = Fonts;
+			path = Resources/Fonts;
+			sourceTree = "<group>";
+		};
+		B246BDAB10F6C7FE078ABBB7 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				A071A577DE46FD6598BE1B08 /* NotificationService.swift */,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		C2C83CFB046CCAA21A69BF0E /* Zebra */ = {
+			isa = PBXGroup;
+			children = (
+				012866129A7AD8E21054E09F /* PrinterClient.swift */,
+				0338C70E7D5244808C138459 /* ZebraSdkImplementationGuide.md */,
+			);
+			path = Zebra;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8746258ECA45462359E5205E /* ZebraAirportAgentTool */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2C4A8544BF1DE21BA65A575 /* Build configuration list for PBXNativeTarget "ZebraAirportAgentTool" */;
+			buildPhases = (
+				6B8029E2A3AA6B04FF8EE602 /* Sources */,
+				FF981555022B14879407304B /* Resources */,
+				8D46C97344681AED7047EE36 /* Frameworks */,
+				32E02254D82EDF5541D752F7 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZebraAirportAgentTool;
+			packageProductDependencies = (
+			);
+			productName = ZebraAirportAgentTool;
+			productReference = A813652E95B75D04F2F2BD74 /* ZebraAirportAgentTool.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEFFF61F4E79A93628ED2172 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					8746258ECA45462359E5205E = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 63FC9717794D40A37BB209C9 /* Build configuration list for PBXProject "ZebraAirportAgentTool" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 940842B7860C531C88271D0F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 92A82C77BF6B670C698117BF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8746258ECA45462359E5205E /* ZebraAirportAgentTool */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FF981555022B14879407304B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89B19BCDAFE1BF1276C2892D /* README.md in Resources */,
+				A6947FCD64B9F24B458DB897 /* ZebraSdkImplementationGuide.md in Resources */,
+				AA8E38039004662F26CF63A0 /* runtime-config.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B8029E2A3AA6B04FF8EE602 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84977F92A9D5397AF9670513 /* AppTheme.swift in Sources */,
+				836080D2E60826294408C171 /* AuthService.swift in Sources */,
+				2F73BC2F8AC1607A2C8574AC /* BoardingPassScannerView.swift in Sources */,
+				E75F5387D665CF2AE4B8C6B7 /* ExampleUsage.swift in Sources */,
+				2E33569FDBE67ADC276E4C1C /* HTTPClient.swift in Sources */,
+				B58B4AA1B58FE2DDFC398319 /* Models.swift in Sources */,
+				47E0D80E588695CD4D4B8319 /* NotificationService.swift in Sources */,
+				A97C17469DFC69601538E581 /* PrintCoordinator.swift in Sources */,
+				8D8A4F371376D5A9F7B53E2D /* PrintScreen.swift in Sources */,
+				DFC6C46B478E3B9208271112 /* PrintViewModel.swift in Sources */,
+				F7BEA40ABBADF2CF49866AA6 /* PrinterClient.swift in Sources */,
+				5279615DC8162AF61EC926DA /* RuntimeConfigStore.swift in Sources */,
+				3C12C4BB11D291063F084DC5 /* ZebraAirportAgentApp.swift in Sources */,
+				C1F9141FBCC44E523CCDF59F /* ZebraPrinterBridge.m in Sources */,
+				DACB924A7AA45A1813D54AE4 /* ZplService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		176C2998FDA1296F9FE308DF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NU95UKDF5V;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"Vendor\"",
+				);
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "App/ZebraAirportAgentTool-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		34D71269D3DFA11BF2F507E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ZebraAirportAgentTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		923DA751FC1D1FD7CF122551 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.ZebraAirportAgentTool;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		E225244274901C10C4219AC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NU95UKDF5V;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"Vendor\"",
+				);
+				INFOPLIST_FILE = App/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "App/ZebraAirportAgentTool-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		63FC9717794D40A37BB209C9 /* Build configuration list for PBXProject "ZebraAirportAgentTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				923DA751FC1D1FD7CF122551 /* Debug */,
+				34D71269D3DFA11BF2F507E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D2C4A8544BF1DE21BA65A575 /* Build configuration list for PBXNativeTarget "ZebraAirportAgentTool" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				176C2998FDA1296F9FE308DF /* Debug */,
+				E225244274901C10C4219AC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEFFF61F4E79A93628ED2172 /* Project object */;
+}

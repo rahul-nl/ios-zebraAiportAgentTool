@@ -1,30 +1,10 @@
 import Foundation
 
-private struct AnyStringMap: Encodable {
-    let values: [String: String]
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: DynamicCodingKey.self)
-        for (key, value) in values {
-            try container.encode(value, forKey: DynamicCodingKey(stringValue: key))
-        }
-    }
-
-    struct DynamicCodingKey: CodingKey {
-        var stringValue: String
-        init?(stringValue: String) { self.stringValue = stringValue }
-        var intValue: Int? { nil }
-        init?(intValue: Int) { nil }
-    }
-}
-
 final class AuthService {
     private let config: RuntimeConfig
-    private let httpClient: HTTPClient
 
-    init(config: RuntimeConfig, httpClient: HTTPClient = HTTPClient()) {
+    init(config: RuntimeConfig) {
         self.config = config
-        self.httpClient = httpClient
     }
 
     func fetchAccessToken() async throws -> String {
@@ -32,20 +12,57 @@ final class AuthService {
             throw AppError.config("Invalid auth URL")
         }
 
-        let body = AnyStringMap(values: config.authBodyTemplate)
-        let response: TokenResponse = try await httpClient.send(
-            url: url,
-            method: config.authMethod,
-            headers: config.authHeaders,
-            body: body,
-            timeoutSeconds: config.requestTimeoutSeconds,
-            responseType: TokenResponse.self
-        )
+        var request = URLRequest(url: url, timeoutInterval: TimeInterval(config.requestTimeoutSeconds))
+        request.httpMethod = config.authMethod.uppercased()
 
-        guard !response.access_token.isEmpty else {
+        config.authHeaders.forEach { request.setValue($1, forHTTPHeaderField: $0) }
+
+        let contentType = config.authHeaders["Content-Type"]?.lowercased() ?? "application/json"
+        if contentType.contains("application/x-www-form-urlencoded") {
+            request.httpBody = formEncodedData(from: config.authBodyTemplate)
+        } else {
+            request.httpBody = try JSONEncoder().encode(config.authBodyTemplate)
+        }
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse else {
+            throw AppError.network("Invalid HTTP response from token API")
+        }
+
+        guard (200...299).contains(httpResponse.statusCode) else {
+            let bodyText = String(data: data, encoding: .utf8) ?? "<non-utf8 body>"
+            throw AppError.network("Token API HTTP \(httpResponse.statusCode): \(bodyText)")
+        }
+
+        let responseBody: TokenResponse
+        do {
+            responseBody = try JSONDecoder().decode(TokenResponse.self, from: data)
+        } catch {
+            let bodyText = String(data: data, encoding: .utf8) ?? "<non-utf8 body>"
+            throw AppError.parsing("Token decode failed: \(error.localizedDescription). Body: \(bodyText)")
+        }
+
+        guard !responseBody.access_token.isEmpty else {
             throw AppError.network("Token API returned empty access_token")
         }
 
-        return response.access_token
+        return responseBody.access_token
+    }
+
+    private func formEncodedData(from values: [String: String]) -> Data {
+        let body = values
+            .map { key, value in
+                "\(percentEncode(key))=\(percentEncode(value))"
+            }
+            .joined(separator: "&")
+
+        return Data(body.utf8)
+    }
+
+    private func percentEncode(_ value: String) -> String {
+        var allowed = CharacterSet.urlQueryAllowed
+        allowed.remove(charactersIn: ":#[]@!$&'()*+,;=")
+        return value.addingPercentEncoding(withAllowedCharacters: allowed) ?? value
     }
 }

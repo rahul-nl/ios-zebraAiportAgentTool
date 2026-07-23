@@ -9,6 +9,29 @@ final class HTTPClient {
         timeoutSeconds: Int,
         responseType: Response.Type
     ) async throws -> Response {
+        let data = try await sendData(
+            url: url,
+            method: method,
+            headers: headers,
+            body: body,
+            timeoutSeconds: timeoutSeconds
+        )
+
+        do {
+            return try JSONDecoder().decode(Response.self, from: data)
+        } catch {
+            let bodyText = String(data: data, encoding: .utf8) ?? "<non-utf8 body>"
+            throw AppError.parsing("Decoding failed: \(error.localizedDescription). Body: \(bodyText)")
+        }
+    }
+
+    func sendData<Request: Encodable>(
+        url: URL,
+        method: String,
+        headers: [String: String],
+        body: Request?,
+        timeoutSeconds: Int
+    ) async throws -> Data {
         var request = URLRequest(url: url, timeoutInterval: TimeInterval(timeoutSeconds))
         request.httpMethod = method.uppercased()
 
@@ -29,11 +52,6 @@ final class HTTPClient {
             throw AppError.network("HTTP \(httpResponse.statusCode): \(serverMessage)")
         }
 
-        do {
-            return try JSONDecoder().decode(Response.self, from: data)
-        } catch {
-            let bodyText = String(data: data, encoding: .utf8) ?? "<non-utf8 body>"
-            throw AppError.parsing("Decoding failed: \(error.localizedDescription). Body: \(bodyText)")
-        }
+        return data
     }
 }

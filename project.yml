@@ -1,0 +1,41 @@
+name: ZebraAirportAgentTool
+options:
+  minimumXcodeGenVersion: 2.38.0
+  deploymentTarget:
+    iOS: "16.0"
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+    PRODUCT_BUNDLE_IDENTIFIER: com.example.ZebraAirportAgentTool
+    CURRENT_PROJECT_VERSION: 1
+    MARKETING_VERSION: 1.0
+targets:
+  ZebraAirportAgentTool:
+    type: application
+    platform: iOS
+    info:
+      path: App/Info.plist
+    sources:
+      - path: App
+      - path: AppCore
+      - path: Config/runtime-config.json
+      - path: Resources/Fonts
+    settings:
+      base:
+        TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_FILE: App/Info.plist
+        SWIFT_OBJC_BRIDGING_HEADER: App/ZebraAirportAgentTool-Bridging-Header.h
+        CODE_SIGN_STYLE: Automatic
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        OTHER_LDFLAGS:
+          - $(inherited)
+          - -ObjC
+schemes:
+  ZebraAirportAgentTool:
+    build:
+      targets:
+        ZebraAirportAgentTool: all
+    run:
+      config: Debug
+    archive:
+      config: Release

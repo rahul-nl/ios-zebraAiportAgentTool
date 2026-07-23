@@ -25,6 +25,7 @@ final class RuntimeConfigStore {
             zplPath: userDefaults.string(forKey: Keys.zplPath) ?? bundled.zplPath,
             zplMethod: bundled.zplMethod,
             zplHeaders: bundled.zplHeaders,
+            zplRequiresBearerAuth: bundled.zplRequiresBearerAuth,
             defaultStationCode: bundled.defaultStationCode,
             defaultDeviceId: bundled.defaultDeviceId,
             requestTimeoutSeconds: bundled.requestTimeoutSeconds

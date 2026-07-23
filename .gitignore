@@ -15,5 +15,10 @@ build/
 Config/runtime-config.json
 .env
 
+# Local Zebra SDK artifacts
+Link-OS_SDK/
+zebra-linkos-mpsdk-ios-v1.6.1158.zip
+Vendor/ZSDK_API.xcframework
+
 # Logs
 *.log

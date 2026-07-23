@@ -11,6 +11,7 @@ struct RuntimeConfig: Codable {
     let zplPath: String
     let zplMethod: String
     let zplHeaders: [String: String]
+    let zplRequiresBearerAuth: Bool?
 
     let defaultStationCode: String
     let defaultDeviceId: String
@@ -34,12 +35,10 @@ struct TokenResponse: Decodable {
 
 struct ZplRequest: Encodable {
     let pnr: String
-    let stationCode: String
-    let deviceId: String
 }
 
 struct ZplResponse: Decodable {
-    let jobId: String
+    let jobId: String?
     let zpl: String
 }
 
