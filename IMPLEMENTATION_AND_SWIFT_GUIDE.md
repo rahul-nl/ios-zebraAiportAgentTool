@@ -90,6 +90,111 @@ flowchart TD
     N --> O[Zebra Printer]
 ```
 
+## Visual Map
+
+This section is designed for fast orientation when you open the repo for the first time.
+
+### Layer Ownership Diagram
+
+```mermaid
+flowchart LR
+    subgraph Frontend
+        A[ZebraAirportAgentApp]
+        B[PrintScreen]
+        C[PrintViewModel]
+        D[BoardingPassScannerView]
+        E[AppTheme]
+    end
+
+    subgraph Application_and_Backend
+        F[PrintCoordinator]
+        G[AuthService]
+        H[ZplService]
+        I[HTTPClient]
+        J[RuntimeConfigStore]
+        K[Models]
+        L[NotificationService]
+    end
+
+    subgraph Device_and_SDK
+        M[PrinterClient]
+        N[ZebraPrinterBridge]
+        O[Zebra SDK]
+        P[Physical Printer]
+    end
+
+    A --> B
+    B --> C
+    B --> D
+    B --> E
+    C --> F
+    F --> G
+    F --> H
+    H --> I
+    F --> L
+    F --> M
+    G --> J
+    H --> J
+    J --> K
+    M --> N
+    N --> O
+    O --> P
+```
+
+### Screen-to-System Map
+
+```mermaid
+flowchart TD
+    A[Agent opens app] --> B[PrintScreen]
+    B --> C[Search New Devices]
+    B --> D[Scan Boarding Pass]
+    B --> E[Enter PNR manually]
+    C --> F[ExternalAccessory picker]
+    D --> G[Camera scanner]
+    G --> H[Payload parsing]
+    E --> I[PNR ready]
+    H --> I
+    F --> J[Printer selected]
+    I --> K[Tap Print]
+    J --> K
+    K --> L[Coordinator workflow]
+    L --> M[Backend APIs]
+    L --> N[Zebra SDK]
+    N --> O[Printed label]
+```
+
+### Suggested Real Screenshot Set
+
+If you want to turn this into onboarding material for other engineers or airport agents, these are the best screenshots to capture from the running app:
+
+1. main print screen before device discovery
+2. Bluetooth printer selection state after discovery
+3. scanner sheet with barcode guide overlay
+4. populated PNR after successful scan
+5. printing state with progress indicator
+6. success state showing printed job feedback
+7. failure state showing a realistic operational error
+
+### Screenshot Annotation Template
+
+Use this template under each screenshot if you add PNGs later:
+
+```md
+#### Screen: Main print form
+
+What the user is doing:
+- Selecting printer
+- Entering or scanning a PNR
+
+What the code path is:
+- PrintScreen renders controls
+- PrintViewModel owns form state
+- PrintCoordinator starts only after Print is tapped
+
+What to learn from it:
+- SwiftUI binds UI directly to observable state
+```
+
 ## End-to-End Runtime Flow
 
 ```mermaid
